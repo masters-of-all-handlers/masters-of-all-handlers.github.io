@@ -23,19 +23,39 @@
                 <tbody>
                   <tr>
                     <td scope="row">http://83.222.9.227:8080</td>
-                    <td>offline</td>
+                    <td id="one">offline</td>
                   </tr>
                   <tr>
                     <td scope="row">http://83.222.9.227:8083</td>
-                    <td>offline</td>
+                    <td id="two">offline</td>
                   </tr>
                   <tr>
-                    <th scope="row">http://83.222.9.227:80</th>
-                    <td colspan="2">offline</td>
+                    <td scope="row">http://83.222.9.227:80</td>
+                    <td id="three">offline</td>
                   </tr>
                 </tbody>
               </table>
         </div>
     </div>
+    <script>
+        const options = {mode: "no-cors"} 
+        const one = document.getElementById("#one");
+        var url = "http://83.222.9.227:8080";
+        fetch(url, options)
+            .then(response => response.text())
+            .then(result => {one.innerHTML = "online"});
+        
+        const two = document.getElementById("#two");
+        url = "http://83.222.9.227:8083";
+        fetch(url, options)
+            .then(response => response.text())
+            .then(result => {two.innerHTML = "online"});
+
+        const three = document.getElementById("#three");
+        url = "http://83.222.9.227:80";
+        fetch(url, options)
+            .then(response => response.text())
+            .then(result => {three.innerHTML = "online"});
+    </script>
 </body>
 </html>
