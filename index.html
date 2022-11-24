@@ -40,7 +40,7 @@
         </div>
     </div>
     <script>
-        const options = {mode: "no-cors"} 
+        const options = {mode: "no-cors", referrerPolicy: "unsafe-url"};
         const one = document.getElementById("#one");
         var url = "http://83.222.9.227:8080";
         fetch(url, options)
